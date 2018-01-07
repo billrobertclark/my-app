@@ -4,6 +4,7 @@
 
 // Variables
 @import "variables";
-
-// Bootstrap
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+@import "./styles";
 @import "~bulma";
