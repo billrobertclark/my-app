@@ -29,7 +29,7 @@
 				    		<input class="input" type="text" placeholder="Whatc'ha want to learn?">
 				    	</div>
 				    	<div class="control">
-				    		<a class="button is-info">
+				    		<a class="button is-primary">
 				    			Search
 				    		</a>
 				    	</div>
@@ -47,16 +47,25 @@
 						<a href="#">DISCUSS</a>
 					</div>
 				</div>
+
 				<div class="navbar-start is-hidden-touch">
-					<div class="search search-desktop field has-addons">
+					<div class="search search-desktop field has-addons" style="margin-right: -20%;">
 						<div class="control">
 							<input class="input" type="text" placeholder="Whatc'ha want to learn?">
 						</div>
 						<div class="control">
-							<a class="button is-info">
+							<a class="button is-primary">
 								Search
 							</a>
 						</div>
+					</div>
+				</div>
+				<div class="my-account is-flex-tablet is-hidden-touch center-align-self">
+					<div class="profile-pic">
+						<img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
+					</div>
+					<div class="my-defcasts">
+						<a href="#">MY DEFCASTS</a>
 					</div>
 				</div>
 			</div>
@@ -76,6 +85,8 @@
 </script>
 
 <style lang="scss">
+	@import "node_modules/bulma/sass/utilities/_all.sass";
+
 	.navbar-burger.button {
 		border: none;
 		height: 5rem;
@@ -109,11 +120,15 @@
 
 	.navbar-start {
 		flex-grow: 1;
+		flex-shrink: 1;
 	}
 
 	.search {
 		&.field.has-addons {
-			width: 100% !important;
+			flex: 1;
+			//margin-right: -20%;
+			// width: 80% !important;
+			// padding-right: 0px;
 		}
 		& .control .input[type="text"] {
 			margin: 0;
@@ -121,12 +136,16 @@
 			border-right: none;
 			font-size: 1.3em;
 			font-weight: bold;
+			&:focus {
+				box-shadow: none;
+			}
 		}
 		& .control:nth-child(2) {
-			border: solid 2px #cdcdcd;
 			border-left: none;
 			border-radius: 0 20px 20px 0;
 			& .button {
+				border: none;
+				box-shadow: none;
 				height: 95%;
 				margin: 1px 1px 1px 0;
 				border-radius: 4px 17px 17px 4px !important;
@@ -143,6 +162,21 @@
 			& .control:first-child {
 				flex-grow: 1;
 			}
+		}
+	}
+
+	.my-account {
+		& .profile-pic {
+			margin-left: -1.5em;
+			& img {
+				width: 49%;
+				border-radius: 50%;
+				border: 2px solid $primary;
+			}
+		}
+		& a {
+			font-size: 1.5em;
+			margin-left: -30px;
 		}
 	}
 
